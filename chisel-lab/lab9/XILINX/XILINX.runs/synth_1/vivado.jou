@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Thu Mar 31 16:50:16 2022
+# Process ID: 17252
+# Current directory: /home/ferry/dev/DE2/chisel-lab/lab9/XILINX/XILINX.runs/synth_1
+# Command line: vivado -log Display.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Display.tcl
+# Log file: /home/ferry/dev/DE2/chisel-lab/lab9/XILINX/XILINX.runs/synth_1/Display.vds
+# Journal file: /home/ferry/dev/DE2/chisel-lab/lab9/XILINX/XILINX.runs/synth_1/vivado.jou
+# Running On: ferry, OS: Linux, CPU Frequency: 800.000 MHz, CPU Physical cores: 4, Host memory: 16649 MB
+#-----------------------------------------------------------
+source Display.tcl -notrace

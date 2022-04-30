@@ -1,0 +1,214 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Thu Mar 10 16:43:16 2022
+# Process ID: 12372
+# Current directory: /home/ferry/dev/DE2/chisel-lab/lab6/XILINX/XILINX.runs/synth_1
+# Command line: vivado -log SevenSegDecoder.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source SevenSegDecoder.tcl
+# Log file: /home/ferry/dev/DE2/chisel-lab/lab6/XILINX/XILINX.runs/synth_1/SevenSegDecoder.vds
+# Journal file: /home/ferry/dev/DE2/chisel-lab/lab6/XILINX/XILINX.runs/synth_1/vivado.jou
+# Running On: ferry, OS: Linux, CPU Frequency: 4000.000 MHz, CPU Physical cores: 4, Host memory: 16649 MB
+#-----------------------------------------------------------
+source SevenSegDecoder.tcl -notrace
+Command: synth_design -top SevenSegDecoder -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 12548
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2600.848 ; gain = 0.000 ; free physical = 153 ; free virtual = 8615
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'SevenSegDecoder' [/home/ferry/dev/DE2/chisel-lab/lab6/SevenSegDecoder.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'SevenSegDecoder' (1#1) [/home/ferry/dev/DE2/chisel-lab/lab6/SevenSegDecoder.v:1]
+WARNING: [Synth 8-3917] design SevenSegDecoder has port io_an[3] driven by constant 1
+WARNING: [Synth 8-3917] design SevenSegDecoder has port io_an[2] driven by constant 1
+WARNING: [Synth 8-3917] design SevenSegDecoder has port io_an[1] driven by constant 1
+WARNING: [Synth 8-3917] design SevenSegDecoder has port io_an[0] driven by constant 0
+WARNING: [Synth 8-7129] Port clock in module SevenSegDecoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module SevenSegDecoder is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2600.848 ; gain = 0.000 ; free physical = 229 ; free virtual = 7925
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2600.848 ; gain = 0.000 ; free physical = 1067 ; free virtual = 8766
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2600.848 ; gain = 0.000 ; free physical = 1066 ; free virtual = 8765
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2600.848 ; gain = 0.000 ; free physical = 1060 ; free virtual = 8759
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/ferry/dev/DE2/chisel-lab/lab6/sevenseg.xdc]
+Finished Parsing XDC File [/home/ferry/dev/DE2/chisel-lab/lab6/sevenseg.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/ferry/dev/DE2/chisel-lab/lab6/sevenseg.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/SevenSegDecoder_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/SevenSegDecoder_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2664.707 ; gain = 0.000 ; free physical = 1030 ; free virtual = 8750
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2664.707 ; gain = 0.000 ; free physical = 1030 ; free virtual = 8750
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 1094 ; free virtual = 8817
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 1094 ; free virtual = 8817
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 1094 ; free virtual = 8817
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 1092 ; free virtual = 8818
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design SevenSegDecoder has port io_an[3] driven by constant 1
+WARNING: [Synth 8-3917] design SevenSegDecoder has port io_an[2] driven by constant 1
+WARNING: [Synth 8-3917] design SevenSegDecoder has port io_an[1] driven by constant 1
+WARNING: [Synth 8-3917] design SevenSegDecoder has port io_an[0] driven by constant 0
+WARNING: [Synth 8-7129] Port clock in module SevenSegDecoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module SevenSegDecoder is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 1061 ; free virtual = 8794
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 919 ; free virtual = 8698
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 919 ; free virtual = 8698
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 911 ; free virtual = 8690
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 910 ; free virtual = 8689
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 910 ; free virtual = 8689
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 910 ; free virtual = 8689
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 910 ; free virtual = 8689
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 910 ; free virtual = 8689
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 910 ; free virtual = 8689
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT4 |     7|
+|2     |IBUF |     4|
+|3     |OBUF |    11|
++------+-----+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 910 ; free virtual = 8689
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2664.707 ; gain = 0.000 ; free physical = 970 ; free virtual = 8749
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 970 ; free virtual = 8749
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2664.707 ; gain = 0.000 ; free physical = 959 ; free virtual = 8741
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2664.707 ; gain = 0.000 ; free physical = 993 ; free virtual = 8779
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 247d8c9c
+INFO: [Common 17-83] Releasing license: Synthesis
+15 Infos, 13 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:23 . Memory (MB): peak = 2664.707 ; gain = 64.031 ; free physical = 1190 ; free virtual = 8976
+INFO: [Common 17-1381] The checkpoint '/home/ferry/dev/DE2/chisel-lab/lab6/XILINX/XILINX.runs/synth_1/SevenSegDecoder.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file SevenSegDecoder_utilization_synth.rpt -pb SevenSegDecoder_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 10 16:43:51 2022...

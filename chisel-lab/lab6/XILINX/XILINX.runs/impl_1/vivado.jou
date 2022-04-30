@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Thu Mar 10 16:44:02 2022
+# Process ID: 12749
+# Current directory: /home/ferry/dev/DE2/chisel-lab/lab6/XILINX/XILINX.runs/impl_1
+# Command line: vivado -log SevenSegDecoder.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source SevenSegDecoder.tcl -notrace
+# Log file: /home/ferry/dev/DE2/chisel-lab/lab6/XILINX/XILINX.runs/impl_1/SevenSegDecoder.vdi
+# Journal file: /home/ferry/dev/DE2/chisel-lab/lab6/XILINX/XILINX.runs/impl_1/vivado.jou
+# Running On: ferry, OS: Linux, CPU Frequency: 800.000 MHz, CPU Physical cores: 4, Host memory: 16649 MB
+#-----------------------------------------------------------
+source SevenSegDecoder.tcl -notrace

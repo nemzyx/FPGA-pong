@@ -1,0 +1,260 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Thu Mar 31 16:50:16 2022
+# Process ID: 17252
+# Current directory: /home/ferry/dev/DE2/chisel-lab/lab9/XILINX/XILINX.runs/synth_1
+# Command line: vivado -log Display.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Display.tcl
+# Log file: /home/ferry/dev/DE2/chisel-lab/lab9/XILINX/XILINX.runs/synth_1/Display.vds
+# Journal file: /home/ferry/dev/DE2/chisel-lab/lab9/XILINX/XILINX.runs/synth_1/vivado.jou
+# Running On: ferry, OS: Linux, CPU Frequency: 800.000 MHz, CPU Physical cores: 4, Host memory: 16649 MB
+#-----------------------------------------------------------
+source Display.tcl -notrace
+Command: synth_design -top Display -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 17447
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2600.848 ; gain = 0.000 ; free physical = 227 ; free virtual = 6631
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Display' [/home/ferry/dev/DE2/chisel-lab/lab9/Display.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'Display' (1#1) [/home/ferry/dev/DE2/chisel-lab/lab9/Display.v:1]
+WARNING: [Synth 8-3330] design Display has an empty top module
+WARNING: [Synth 8-3917] design Display has port io_seg[6] driven by constant 0
+WARNING: [Synth 8-3917] design Display has port io_seg[5] driven by constant 0
+WARNING: [Synth 8-3917] design Display has port io_seg[4] driven by constant 0
+WARNING: [Synth 8-3917] design Display has port io_seg[3] driven by constant 0
+WARNING: [Synth 8-3917] design Display has port io_seg[2] driven by constant 0
+WARNING: [Synth 8-3917] design Display has port io_seg[1] driven by constant 0
+WARNING: [Synth 8-3917] design Display has port io_seg[0] driven by constant 0
+WARNING: [Synth 8-3917] design Display has port io_an[3] driven by constant 1
+WARNING: [Synth 8-3917] design Display has port io_an[2] driven by constant 1
+WARNING: [Synth 8-3917] design Display has port io_an[1] driven by constant 1
+WARNING: [Synth 8-3917] design Display has port io_an[0] driven by constant 0
+WARNING: [Synth 8-7129] Port clock in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[15] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[14] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[13] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[12] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[11] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[10] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[9] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[8] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[7] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[6] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[5] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[4] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[3] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[2] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[1] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[0] in module Display is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2600.848 ; gain = 0.000 ; free physical = 290 ; free virtual = 6327
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2600.848 ; gain = 0.000 ; free physical = 284 ; free virtual = 6323
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2600.848 ; gain = 0.000 ; free physical = 284 ; free virtual = 6323
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2600.848 ; gain = 0.000 ; free physical = 279 ; free virtual = 6317
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/ferry/dev/DE2/chisel-lab/lab9/display.xdc]
+Finished Parsing XDC File [/home/ferry/dev/DE2/chisel-lab/lab9/display.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/ferry/dev/DE2/chisel-lab/lab9/display.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Display_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Display_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2664.707 ; gain = 0.000 ; free physical = 1116 ; free virtual = 7155
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2664.707 ; gain = 0.000 ; free physical = 1116 ; free virtual = 7155
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 1176 ; free virtual = 7216
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 1176 ; free virtual = 7216
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 1176 ; free virtual = 7216
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 1178 ; free virtual = 7218
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3330] design Display has an empty top module
+WARNING: [Synth 8-3917] design Display has port io_seg[6] driven by constant 0
+WARNING: [Synth 8-3917] design Display has port io_seg[5] driven by constant 0
+WARNING: [Synth 8-3917] design Display has port io_seg[4] driven by constant 0
+WARNING: [Synth 8-3917] design Display has port io_seg[3] driven by constant 0
+WARNING: [Synth 8-3917] design Display has port io_seg[2] driven by constant 0
+WARNING: [Synth 8-3917] design Display has port io_seg[1] driven by constant 0
+WARNING: [Synth 8-3917] design Display has port io_seg[0] driven by constant 0
+WARNING: [Synth 8-3917] design Display has port io_an[3] driven by constant 1
+WARNING: [Synth 8-3917] design Display has port io_an[2] driven by constant 1
+WARNING: [Synth 8-3917] design Display has port io_an[1] driven by constant 1
+WARNING: [Synth 8-3917] design Display has port io_an[0] driven by constant 0
+WARNING: [Synth 8-7129] Port clock in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[15] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[14] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[13] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[12] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[11] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[10] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[9] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[8] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[7] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[6] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[5] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[4] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[3] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[2] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[1] in module Display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_sw[0] in module Display is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 1167 ; free virtual = 7215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 534 ; free virtual = 6627
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 539 ; free virtual = 6633
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 522 ; free virtual = 6616
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 657 ; free virtual = 6774
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 657 ; free virtual = 6774
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 657 ; free virtual = 6774
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 657 ; free virtual = 6774
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 657 ; free virtual = 6774
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 657 ; free virtual = 6774
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |OBUF |    11|
++------+-----+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 657 ; free virtual = 6774
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 31 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2664.707 ; gain = 0.000 ; free physical = 713 ; free virtual = 6830
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2664.707 ; gain = 63.859 ; free physical = 713 ; free virtual = 6830
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2664.707 ; gain = 0.000 ; free physical = 706 ; free virtual = 6823
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2664.707 ; gain = 0.000 ; free physical = 742 ; free virtual = 6859
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: a3098c29
+INFO: [Common 17-83] Releasing license: Synthesis
+15 Infos, 61 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:22 . Memory (MB): peak = 2664.707 ; gain = 64.031 ; free physical = 930 ; free virtual = 7047
+INFO: [Common 17-1381] The checkpoint '/home/ferry/dev/DE2/chisel-lab/lab9/XILINX/XILINX.runs/synth_1/Display.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Display_utilization_synth.rpt -pb Display_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 31 16:50:53 2022...

@@ -1,0 +1,122 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Thu Mar 31 14:58:30 2022
+# Process ID: 12456
+# Current directory: /home/ferry/dev/DE2/chisel-lab/lab8/XILINX/XILINX.runs/synth_1
+# Command line: vivado -log CountSevenSeg.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source CountSevenSeg.tcl
+# Log file: /home/ferry/dev/DE2/chisel-lab/lab8/XILINX/XILINX.runs/synth_1/CountSevenSeg.vds
+# Journal file: /home/ferry/dev/DE2/chisel-lab/lab8/XILINX/XILINX.runs/synth_1/vivado.jou
+# Running On: ferry, OS: Linux, CPU Frequency: 800.000 MHz, CPU Physical cores: 4, Host memory: 16649 MB
+#-----------------------------------------------------------
+source CountSevenSeg.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental /home/ferry/dev/DE2/chisel-lab/lab8/XILINX/XILINX.srcs/utils_1/imports/synth_1/CountSevenSeg.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/ferry/dev/DE2/chisel-lab/lab8/XILINX/XILINX.srcs/utils_1/imports/synth_1/CountSevenSeg.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top CountSevenSeg -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis because the design is too small; reverting to default synthesis
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 12481
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2590.941 ; gain = 0.000 ; free physical = 468 ; free virtual = 7111
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'CountSevenSeg' [/home/ferry/dev/DE2/chisel-lab/lab8/CountSevenSeg.v:22]
+INFO: [Synth 8-6157] synthesizing module 'SevenSegDec' [/home/ferry/dev/DE2/chisel-lab/lab8/CountSevenSeg.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'SevenSegDec' (1#1) [/home/ferry/dev/DE2/chisel-lab/lab8/CountSevenSeg.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'CountSevenSeg' (2#1) [/home/ferry/dev/DE2/chisel-lab/lab8/CountSevenSeg.v:22]
+WARNING: [Synth 8-3917] design CountSevenSeg has port io_an[3] driven by constant 1
+WARNING: [Synth 8-3917] design CountSevenSeg has port io_an[2] driven by constant 1
+WARNING: [Synth 8-3917] design CountSevenSeg has port io_an[1] driven by constant 1
+WARNING: [Synth 8-3917] design CountSevenSeg has port io_an[0] driven by constant 0
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2590.941 ; gain = 0.000 ; free physical = 1165 ; free virtual = 7631
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2590.941 ; gain = 0.000 ; free physical = 1220 ; free virtual = 7686
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2590.941 ; gain = 0.000 ; free physical = 1220 ; free virtual = 7686
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2590.941 ; gain = 0.000 ; free physical = 1214 ; free virtual = 7680
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/ferry/dev/DE2/chisel-lab/lab8/sevenseg-cnt.xdc]
+Finished Parsing XDC File [/home/ferry/dev/DE2/chisel-lab/lab8/sevenseg-cnt.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/ferry/dev/DE2/chisel-lab/lab8/sevenseg-cnt.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/CountSevenSeg_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/CountSevenSeg_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2654.801 ; gain = 0.000 ; free physical = 1129 ; free virtual = 7595
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2654.801 ; gain = 0.000 ; free physical = 1129 ; free virtual = 7595
+WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis because the design is too small; reverting to default synthesis
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2654.801 ; gain = 63.859 ; free physical = 1208 ; free virtual = 7674
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2654.801 ; gain = 63.859 ; free physical = 1208 ; free virtual = 7674
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2654.801 ; gain = 63.859 ; free physical = 1208 ; free virtual = 7674
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2654.801 ; gain = 63.859 ; free physical = 1199 ; free virtual = 7665
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design CountSevenSeg has port io_an[3] driven by constant 1
+WARNING: [Synth 8-3917] design CountSevenSeg has port io_an[2] driven by constant 1
+WARNING: [Synth 8-3917] design CountSevenSeg has port io_an[1] driven by constant 1
+WARNING: [Synth 8-3917] design CountSevenSeg has port io_an[0] driven by constant 0
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2654.801 ; gain = 63.859 ; free physical = 1193 ; free virtual = 7663
+---------------------------------------------------------------------------------
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
