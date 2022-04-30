@@ -22,32 +22,24 @@ class FSM extends Module {
   io.add2 := false.B
   io.add5 := false.B
   io.init := false.B
-  
-  val ready = WireDefault(true.B)
 
-  when(~io.buy && ~io.coin2 && ~io.coin5) {
-    ready := true.B
-    io.add2 := false.B
-    io.add5 := false.B
-  } .otherwise {
-    ready := false.B
-  }
+  val anyBtn = (io.buy | io.coin2 | io.coin5)
+  val ready = WireDefault(false.B)
+  ready := anyBtn && !RegNext(anyBtn)
   
-  when(ready) {    
+  when(ready) {
     when(io.coin2) {
-      // ready := false.B
       io.add2 := true.B
-    } .elsewhen(io.coin5) {
-      // ready := false.B
+    }
+    when(io.coin5) {
       io.add5 := true.B
     }
+    
     when(io.buy && io.buyCheck) {
-      // ready := false.B
       io.alarm := false.B
       io.releaseCan := true.B
       io.subPrice := true.B
     } .elsewhen(io.buy && ~io.buyCheck) {
-      // ready := false.B
       io.alarm := true.B
       io.releaseCan := false.B
       io.subPrice := false.B
@@ -60,11 +52,4 @@ class FSM extends Module {
   } .otherwise {
     io.init := false.B
   }
-
-  // button check
-  // when(buy || coin2 || coin5) {
-  //   ready := false.B
-  // } .otherwise {
-  //   ready := true.B
-  // }
 }
