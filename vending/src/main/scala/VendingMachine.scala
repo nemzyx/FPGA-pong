@@ -1,7 +1,7 @@
 import chisel3._
 import chisel3.util._
 
-class VendingMachine(maxCount: Int) extends Module {
+class runVendingMachine(maxCount: Int) extends Module {
   val io = IO(new Bundle {
     val price = Input(UInt(5.W))
     val coin2 = Input(Bool())
@@ -53,8 +53,9 @@ class VendingMachine(maxCount: Int) extends Module {
 
 // generate Verilog
 object VendingMachine extends App {
-  // val CNT_MAX = (100000000 / 1000 - 1).U // 100 MHz / 1kHz = 100 kHz
-  (new chisel3.stage.ChiselStage).emitVerilog(new VendingMachine(100000))
+   // val CNT_MAX = (100000000 / 1000 - 1).U // 100 MHz / 1kHz = 100 kHz
+  (new chisel3.stage.ChiselStage).emitVerilog(new runVendingMachine(100000))
+
 }
 
 
