@@ -21,31 +21,37 @@ class FSM extends Module {
   val state = RegInit(ready)
 
 
-  // FSM state switch
+  // FSM input
   switch(state) {
     is(ready) {
-    
-    }
+      when(io.coin2) {state := add2}
+      .elsewhen(io.coin5) {state := add5}
+      .elsewhen(io.buy) {state := buy}
+        .otherwise {state := ready}
+      }
     is(add2) {
-
+      state := buttomCheck
     }
     is(add5){
-
+      state := buttomCheck
     }
     is(buy){
-
+      when(io.buyCheck) {state := release}
+        .otherwise {state := alarm}
     }
     is(alarm){
-
+      when(io.buy) {state := alarm}
+        .otherwise {buttomCheck}
     }
-    is(realese){
-
+    is(release){
+      state := subPrice
     }
     is(subPrice){
-
+      state := buttomCheck
     }
     is(buttomCheck){
-
+      when(!(io.buy | io.coin2 | io.coin5)) {state := ready}
+        .otherwise{state := buttomCheck}
     }
   }
 
