@@ -11,13 +11,12 @@ class FSM extends Module {
     val add2 = Output(Bool())
     val add5 = Output(Bool())
     val releaseCan = Output(Bool())
-    val subPrice = Output(Bool())
     val alarm = Output(Bool())
     val init = Output(Bool())
   })
 
 
-  val ready :: add5 :: add2 :: buy :: alarm :: release :: subPrice :: buttomCheck :: Nil = Enum(8)
+  val ready :: add5 :: add2 :: buy :: alarm :: release :: buttomCheck :: Nil = Enum(7)
   val state = RegInit(ready)
 
 
@@ -44,9 +43,6 @@ class FSM extends Module {
         .otherwise {buttomCheck}
     }
     is(release){
-      state := subPrice
-    }
-    is(subPrice){
       state := buttomCheck
     }
     is(buttomCheck){
@@ -56,67 +52,16 @@ class FSM extends Module {
   }
 
   // Output control
-  switch(ready){
-    is(ready) {
-
-    }
-    is(add2) {
-
-    }
-    is(add5){
-
-    }
-    is(buy){
-
-    }
-    is(alarm){
-
-    }
-    is(realese){
-
-    }
-    is(subPrice){
-
-    }
-    is(buttomCheck){
-
-    }
-  }
-
-  io.alarm := false.B
-  io.releaseCan := false.B
-  io.subPrice := false.B
-  io.add2 := false.B
-  io.add5 := false.B
-  io.init := false.B
-
-  val anyBtn = (io.buy | io.coin2 | io.coin5)
-  val ready = WireDefault(false.B)
-  ready := anyBtn && !RegNext(anyBtn)
-  
-  when(ready) {
-    when(io.coin2) {
-      io.add2 := true.B
-    }
-    when(io.coin5) {
-      io.add5 := true.B
-    }
-    
-    when(io.buy && io.buyCheck) {
+  switch(state){
+    is(ready){
+      io.add2 := false.B
+      io.add5 := false.B
       io.alarm := false.B
-      io.releaseCan := true.B
-      io.subPrice := true.B
-    } .elsewhen(io.buy && ~io.buyCheck) {
-      io.alarm := true.B
       io.releaseCan := false.B
-      io.subPrice := false.B
     }
-  }
-
-  when(io.reset) {
-    ready := false.B
-    io.init := true.B
-  } .otherwise {
-    io.init := false.B
+    is(add2) {io.add2 := true.B}
+    is(add5) {io.add5 := true.B}
+    is(alarm) {io.alarm := true.B}
+    is(realese) {io.releaseCan := true.B}
   }
 }
