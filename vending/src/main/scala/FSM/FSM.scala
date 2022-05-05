@@ -16,6 +16,67 @@ class FSM extends Module {
     val init = Output(Bool())
   })
 
+
+  val ready :: add5 :: add2 :: buy :: alarm :: release :: subPrice :: buttomCheck :: Nil = Enum(8)
+  val state = RegInit(ready)
+
+
+  // FSM state switch
+  switch(state) {
+    is(ready) {
+    
+    }
+    is(add2) {
+
+    }
+    is(add5){
+
+    }
+    is(buy){
+
+    }
+    is(alarm){
+
+    }
+    is(realese){
+
+    }
+    is(subPrice){
+
+    }
+    is(buttomCheck){
+
+    }
+  }
+
+  // Output control
+  switch(ready){
+    is(ready) {
+
+    }
+    is(add2) {
+
+    }
+    is(add5){
+
+    }
+    is(buy){
+
+    }
+    is(alarm){
+
+    }
+    is(realese){
+
+    }
+    is(subPrice){
+
+    }
+    is(buttomCheck){
+
+    }
+  }
+
   io.alarm := false.B
   io.releaseCan := false.B
   io.subPrice := false.B
