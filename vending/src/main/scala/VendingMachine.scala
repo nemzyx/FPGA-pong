@@ -36,7 +36,8 @@ class VendingMachine(maxCount: Int) extends Module {
   DP.io.price := io.price     // io.price 5->8 bit
   DP.io.add2 := FSM.io.add2
   DP.io.add5 := FSM.io.add5
-  DP.io.releaseCan := FSM.io.releaseCan
+  // DP.io.releaseCan := FSM.io.releaseCan
+  DP.io.subPrice := FSM.io.subPrice
   
   FSM.io.buyCheck := DP.io.buyCheck
 

@@ -9,6 +9,7 @@ class FSM extends Module {
     val coin5 = Input(Bool())
     val add2 = Output(Bool())
     val add5 = Output(Bool())
+    val subPrice = Output(Bool())
     val releaseCan = Output(Bool())
     val alarm = Output(Bool())
   })
@@ -16,9 +17,10 @@ class FSM extends Module {
   io.add2 := false.B
   io.add5 := false.B
   io.alarm := false.B
+  io.subPrice := false.B
   io.releaseCan := false.B
 
-  val ready :: add5 :: add2 :: buy :: alarm :: release :: buttomCheck :: Nil = Enum(7)
+  val ready :: add5 :: add2 :: buy :: alarm :: release :: subPrice :: buttonCheck :: Nil = Enum(8)
   val state = RegInit(ready)
 
 
@@ -31,25 +33,29 @@ class FSM extends Module {
       .otherwise          {state := ready}
     }
     is(add2) {
-      state := buttomCheck
+      state := buttonCheck
     }
     is(add5){
-      state := buttomCheck
+      state := buttonCheck
     }
     is(buy){
-      when(io.buyCheck) {state := release}
+      when(io.buyCheck) {state := subPrice}
       .otherwise        {state := alarm}
     }
     is(alarm){
       when(io.buy) {state := alarm}
-      .otherwise   {buttomCheck}
+      .otherwise   {state := buttonCheck}
+    }
+    is(subPrice){
+      state := release
     }
     is(release){
-      state := buttomCheck
+      when(io.buy) {state := release}
+      .otherwise   {state := buttonCheck}
     }
-    is(buttomCheck){
+    is(buttonCheck){
       when(!(io.buy | io.coin2 | io.coin5)) {state := ready}
-      .otherwise {state := buttomCheck}
+      .otherwise {state := buttonCheck}
     }
   }
 
@@ -61,9 +67,10 @@ class FSM extends Module {
       io.alarm := false.B
       io.releaseCan := false.B
     }
-    is(add2)    {io.add2 := true.B}
-    is(add5)    {io.add5 := true.B}
-    is(alarm)   {io.alarm := true.B}
-    is(release) {io.releaseCan := true.B}
+    is(add2)     {io.add2 := true.B}
+    is(add5)     {io.add5 := true.B}
+    is(alarm)    {io.alarm := true.B}
+    is(subPrice) {io.subPrice := true.B}
+    is(release)  {io.releaseCan := true.B}
   }
 }

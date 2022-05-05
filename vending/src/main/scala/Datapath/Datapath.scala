@@ -6,7 +6,8 @@ class Datapath extends Module {
     val price = Input(UInt(8.W))
     val add2 = Input(Bool())
     val add5 = Input(Bool())
-    val releaseCan = Input(Bool())
+    val subPrice = Input(Bool())
+    // val releaseCan = Input(Bool())
     val buyCheck = Output(Bool())
     val sum = Output(UInt(8.W))
   })
@@ -21,7 +22,7 @@ class Datapath extends Module {
     sumReg := sumReg + 5.U;
   }
 
-  when(io.releaseCan) {
+  when(io.subPrice) {
     sumReg := sumReg - io.price
   }
 
