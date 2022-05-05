@@ -29,7 +29,6 @@ class VendingMachine(maxCount: Int) extends Module {
   FSM.io.buy := IoSync.io.s_buy
   FSM.io.coin2 := IoSync.io.s_coin2
   FSM.io.coin5 := IoSync.io.s_coin5
-  FSM.io.reset := false.B // SPØRG OM HJÆLP HVIS DU ER I TVIVL
   io.releaseCan := FSM.io.releaseCan
   io.alarm := FSM.io.alarm
 
@@ -37,13 +36,12 @@ class VendingMachine(maxCount: Int) extends Module {
   DP.io.price := io.price     // io.price 5->8 bit
   DP.io.add2 := FSM.io.add2
   DP.io.add5 := FSM.io.add5
-  DP.io.subPrice := FSM.io.subPrice
-  DP.io.init := FSM.io.init
+  DP.io.releaseCan := FSM.io.releaseCan
   
   FSM.io.buyCheck := DP.io.buyCheck
 
   val display = Module(new DisplayMultiplexer(maxCount))
-  display.io.sum :=  ((DP.io.sum / 10.U(8.W)) << 4) | (DP.io.sum % 10.U(8.W))
+  display.io.sum   := ((DP.io.sum / 10.U(8.W)) << 4) | (DP.io.sum % 10.U(8.W))
   display.io.price := ((io.price / 10.U(8.W)) << 4) | (io.price % 10.U(8.W))
   // END OF OUR CODE
 
