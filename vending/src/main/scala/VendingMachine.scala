@@ -42,8 +42,12 @@ class VendingMachine(maxCount: Int) extends Module {
   FSM.io.buyCheck := DP.io.buyCheck
 
   val display = Module(new DisplayMultiplexer(maxCount))
-  display.io.sum   := ((DP.io.sum / 10.U(8.W)) << 4) | (DP.io.sum % 10.U(8.W))
-  display.io.price := ((io.price / 10.U(8.W)) << 4) | (io.price % 10.U(8.W))
+  val seperator1 = Module(new DecimalSeperator())
+  val seperator2 = Module(new DecimalSeperator())
+  seperator1.io.in := DP.io.sum
+  seperator2.io.in := io.price
+  display.io.sum   := seperator1.io.out
+  display.io.price := seperator2.io.out
   // END OF OUR CODE
 
   io.seg := display.io.seg
