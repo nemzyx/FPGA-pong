@@ -11,7 +11,7 @@
 import chisel3._
 import chisel3.util._
 
-class RNG(clock: Int) extends Module {
+class RNGTable(clock: Int) extends Module {
   val io = IO(new Bundle {
     val random = Output(UInt(4.W))
   })

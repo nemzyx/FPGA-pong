@@ -57,6 +57,7 @@ class Pong(dispFreq: Int, freq: Int) extends Module {
     is(8.U) { io.p2points := "b1111111".U }
   }
 
+  // val RNG = Module(new RNGsimple(dispFreq))
   val RNG = Module(new RNG(dispFreq))
   val win = Module(new Win(freq/30))
   win.io.enable := false.B
@@ -80,10 +81,19 @@ class Pong(dispFreq: Int, freq: Int) extends Module {
   bufCnt := bufCnt + 1.U
   when(bufCnt === dispFreq.U) { bufCnt := 0.U } // reset buffer counter
 
+  val hitCnt = RegInit(0.U(4.W))
   val bulletCnt = RegInit(0.U(32.W))
-  bulletCnt := bulletCnt + 1.U
-  val baseSpeed = (freq / 4).U  // 125ms, freq = 1s
-  when(bulletCnt === baseSpeed) { bulletCnt := 0.U }
+  bulletCnt := bulletCnt + 1.U 
+  val baseSpeed = (freq / 4) // 250ms, freq = 1s
+  //  M = 48 : max speed is 75% of base speed
+  //  M = 24 : max speed is 50% of base speed
+  //  M = 12 : max speed is 25% of base speed
+  val M = 24 // make smaller to increase max speed
+  val speedupTable = Module(new SpeedupTable())
+  speedupTable.io.idx := hitCnt
+  when(bulletCnt === baseSpeed.U - (baseSpeed/M).U * speedupTable.io.out) {
+    bulletCnt := 0.U //tick
+  }
 
   val bulletY = RegInit(0.U(1.W))  // bullet Y position
   val bullet  = RegInit(0.U(3.W))  // bullet position
@@ -108,6 +118,7 @@ class Pong(dispFreq: Int, freq: Int) extends Module {
       p1pointsPersist := 0.U
       p2pointsPersist := 0.U
       win.io.enable := false.B
+      hitCnt := 0.U
 
       when(io.p1){
         bullet  := 0.U
@@ -122,6 +133,7 @@ class Pong(dispFreq: Int, freq: Int) extends Module {
     }
     is(player1) {
       when(p1pos === bulletY) { // hit
+        when(hitCnt < 15.U) { hitCnt := hitCnt + 1.U }
         val rnd = RNG.io.random < 8.U
         when(rnd === bulletY) { bullet := bullet + 1.U }
         bulletY := Mux(rnd, 1.U, 0.U)
@@ -132,6 +144,7 @@ class Pong(dispFreq: Int, freq: Int) extends Module {
     }
     is(player2) {
       when(p2pos === bulletY) { // hit
+        when(hitCnt < 15.U) { hitCnt := hitCnt + 1.U }
         val rnd = RNG.io.random > 7.U
         when(rnd === bulletY) { bullet := bullet - 1.U }
         bulletY := Mux(rnd, 1.U, 0.U)
@@ -141,6 +154,7 @@ class Pong(dispFreq: Int, freq: Int) extends Module {
       }
     }
     is(scoreP1) {
+      hitCnt := 0.U
       p1pointsPersist := p1pointsPersist + 1.U
       p1pointsTable := p1pointsTable + 1.U
       when(p1pointsPersist === 6.U){ // player 1 win
@@ -148,6 +162,7 @@ class Pong(dispFreq: Int, freq: Int) extends Module {
       }.otherwise { state := awaitP2 }
     }
     is(scoreP2) {
+      hitCnt := 0.U
       p2pointsPersist := p2pointsPersist + 1.U
       p2pointsTable := p2pointsTable + 1.U
       when(p2pointsPersist === 6.U){ // player 2 win
