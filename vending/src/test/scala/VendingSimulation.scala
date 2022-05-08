@@ -20,6 +20,9 @@ class VendingSimulation extends MainFrame {
   val switches = new Array[CheckBox](16)
   val btn = new Array[ToggleButton](3)
   var btnVal = new Array[Boolean](3)
+
+  var playerBtn = new Array[ToggleButton](2)
+  var playerBtnVal = new Array[Boolean](2)
   var running = true
 
   def draw7(g: Graphics2D, x: Int, y: Int, seg: Int): Unit = {
@@ -62,7 +65,7 @@ class VendingSimulation extends MainFrame {
       }
     }
 
-    contents += new GridPanel(2, 16) {
+    contents += new GridPanel(2, 3) {
       hGap = 30
       vGap = 30
 
@@ -99,6 +102,18 @@ class VendingSimulation extends MainFrame {
       contents ++= btn
       contents += new Panel {}
 
+      playerBtn(0) = new ToggleButton {
+        text = "P1"
+        reactions += {
+          case ButtonClicked(_) => {
+            playerBtnVal(0) = this.selected
+            println("P1 | trigger " + (if (this.selected) "TRUE" else "FALSE"))
+          }
+        }
+      }
+
+      contents += playerBtn(0)
+
       contents += new Button {
         text = "Exit"
         reactions += {
@@ -108,6 +123,18 @@ class VendingSimulation extends MainFrame {
           }
         }
       }
+
+      playerBtn(1) = new ToggleButton {
+        text = "P2"
+        reactions += {
+          case ButtonClicked(_) => {
+            playerBtnVal(1) = this.selected
+            println("P2 | trigger " + (if (this.selected) "TRUE" else "FALSE"))
+          }
+        }
+      }
+
+      contents += playerBtn(1)
     }
 
     contents += new GridPanel(1, 6) {
@@ -134,7 +161,7 @@ class VendingSimulation extends MainFrame {
 object VendingSimulation extends App {
   val d = new VendingSimulation
   d.visible = true
-  RawTester.test(new VendingMachine(20)) { dut =>
+  RawTester.test(new VendingMachine(20,500)) { dut =>
     dut.clock.setTimeout(0)
     while (d.running) {
 
@@ -148,6 +175,24 @@ object VendingSimulation extends App {
         an >>= 1
       }
 
+      // points LEDs ...
+      d.ledVal(1)  = dut.io.p2LED1.peek.litValue == 1
+      d.ledVal(2)  = dut.io.p2LED2.peek.litValue == 1
+      d.ledVal(3)  = dut.io.p2LED3.peek.litValue == 1
+      d.ledVal(4)  = dut.io.p2LED4.peek.litValue == 1
+      d.ledVal(5)  = dut.io.p2LED5.peek.litValue == 1
+      d.ledVal(6)  = dut.io.p2LED6.peek.litValue == 1
+      d.ledVal(7)  = dut.io.p2LED7.peek.litValue == 1
+
+      d.ledVal(8)  = dut.io.p1LED7.peek.litValue == 1
+      d.ledVal(9)  = dut.io.p1LED6.peek.litValue == 1
+      d.ledVal(10) = dut.io.p1LED5.peek.litValue == 1
+      d.ledVal(11) = dut.io.p1LED4.peek.litValue == 1
+      d.ledVal(12) = dut.io.p1LED3.peek.litValue == 1
+      d.ledVal(13) = dut.io.p1LED2.peek.litValue == 1
+      d.ledVal(14) = dut.io.p1LED1.peek.litValue == 1
+      // points END !
+
       d.ledVal(15) = dut.io.releaseCan.peek.litValue == 1
       d.ledVal(0) = dut.io.alarm.peek.litValue == 1
       var price = 0
@@ -159,6 +204,11 @@ object VendingSimulation extends App {
       dut.io.coin2.poke(d.btnVal(0).B)
       dut.io.coin5.poke(d.btnVal(1).B)
       dut.io.buy.poke(d.btnVal(2).B)
+
+      dut.io.p1.poke(d.playerBtnVal(0).B)
+      dut.io.p2.poke(d.playerBtnVal(1).B)
+
+      dut.io.pongMode.poke((if (d.switches(15).selected) 1 else 0).B)
 
       d.repaint()
       Thread.sleep(10)

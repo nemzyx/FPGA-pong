@@ -23,30 +23,34 @@ set_property PACKAGE_PIN W15 [get_ports {io_price[4]}]
 #set_property PACKAGE_PIN W2  [get_ports {io_sw[12]}]
 #set_property PACKAGE_PIN U1  [get_ports {io_sw[13]}]
 #set_property PACKAGE_PIN T1  [get_ports {io_sw[14]}]
-#set_property PACKAGE_PIN R2  [get_ports {io_sw[15]}]
+set_property PACKAGE_PIN R2  [get_ports {io_pongMode[15]}]
 
 ## LEDs
 set_property PACKAGE_PIN U16 [get_ports {io_alarm}]
-#set_property PACKAGE_PIN E19 [get_ports {led[1]}]
-#set_property PACKAGE_PIN U19 [get_ports {led[2]}]
-#set_property PACKAGE_PIN V19 [get_ports {led[3]}]
-#set_property PACKAGE_PIN W18 [get_ports {led[4]}]
-#set_property PACKAGE_PIN U15 [get_ports {led[5]}]
-#set_property PACKAGE_PIN U14 [get_ports {led[6]}]
-#set_property PACKAGE_PIN V14 [get_ports {led[7]}]
-#set_property PACKAGE_PIN V13 [get_ports {led[8]}]
-#set_property PACKAGE_PIN V3  [get_ports {led[9]}]
-#set_property PACKAGE_PIN W3  [get_ports {led[10]}]
-#set_property PACKAGE_PIN U3  [get_ports {led[11]}]
-#set_property PACKAGE_PIN P3  [get_ports {led[12]}]
-#set_property PACKAGE_PIN N3  [get_ports {led[13]}]
-#set_property PACKAGE_PIN P1  [get_ports {led[14]}]
+set_property PACKAGE_PIN E19 [get_ports {io_p2LED1}]
+set_property PACKAGE_PIN U19 [get_ports {io_p2LED2}]
+set_property PACKAGE_PIN V19 [get_ports {io_p2LED3}]
+set_property PACKAGE_PIN W18 [get_ports {io_p2LED4}]
+set_property PACKAGE_PIN U15 [get_ports {io_p2LED5}]
+set_property PACKAGE_PIN U14 [get_ports {io_p2LED6}]
+set_property PACKAGE_PIN V14 [get_ports {io_p2LED7}]
+set_property PACKAGE_PIN V13 [get_ports {io_p1LED7}]
+set_property PACKAGE_PIN V3  [get_ports {io_p1LED6}]
+set_property PACKAGE_PIN W3  [get_ports {io_p1LED5}]
+set_property PACKAGE_PIN U3  [get_ports {io_p1LED4}]
+set_property PACKAGE_PIN P3  [get_ports {io_p1LED3}]
+set_property PACKAGE_PIN N3  [get_ports {io_p1LED2}]
+set_property PACKAGE_PIN P1  [get_ports {io_p1LED1}]
 set_property PACKAGE_PIN L1  [get_ports {io_releaseCan}]
 
 ##Buttons
 # btnR proposed as reset
 #set_property PACKAGE_PIN T17 [get_ports btnR]
 set_property PACKAGE_PIN T17 [get_ports reset]
+# btnU:
+set_property PACKAGE_PIN T18 [get_ports {io_p1}]
+# btnD:
+set_property PACKAGE_PIN U17 [get_ports {io_p2}]
 
 
 ## Pmod in lower row

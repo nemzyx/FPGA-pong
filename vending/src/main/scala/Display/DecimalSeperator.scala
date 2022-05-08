@@ -21,12 +21,12 @@ class DecimalSeperator extends Module {
   // val left  = cnt << 4
   // val right = (io.in % 10.U(8.W))
 
-  val left  = (io.in / 10.U(8.W)) << 4
-  val right = (io.in % 10.U(8.W))
+  // val left  = (io.in / 10.U(8.W)) << 4
+  // val right = (io.in % 10.U(8.W))
 
   // 5 bit version
-  // val left  = (io.in / 10.U(10.W)) << 5
-  // val right = (io.in % 10.U(10.W))
+  val left  = (io.in / 10.U(10.W)) << 5
+  val right = (io.in % 10.U(10.W))
   
   io.out := left | right
 }
