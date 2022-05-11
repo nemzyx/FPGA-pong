@@ -59,18 +59,18 @@ class Pong(dispFreq: Int, freq: Int) extends Module {
 
   // val RNG = Module(new RNGsimple(dispFreq))
   val RNG = Module(new RNG(dispFreq))
-  val win = Module(new Win(freq/30))
+  val win = Module(new Win(freq/24))
   win.io.enable := false.B
 
   val blk = RegInit(false.B)
 
   val blkCnt = RegInit(0.U(32.W))
   blkCnt := blkCnt + 1.U
-  when(blkCnt === freq.U) {
+  when(blkCnt === (freq/4).U) {
     blkCnt := 0.U
     blk := false.B
   }
-  when(blkCnt === freq.U / 2.U) {
+  when(blkCnt === ((freq/4)/2).U) {
     blk := true.B
   }
 
@@ -83,8 +83,8 @@ class Pong(dispFreq: Int, freq: Int) extends Module {
 
   val hitCnt = RegInit(0.U(4.W))
   val bulletCnt = RegInit(0.U(32.W))
-  bulletCnt := bulletCnt + 1.U 
-  val baseSpeed = (freq / 4) // 250ms, freq = 1s
+  bulletCnt := bulletCnt + 1.U
+  val baseSpeed = (freq / 8) // 250ms, freq = 1s
   //  M = 48 : max speed is 75% of base speed
   //  M = 24 : max speed is 50% of base speed
   //  M = 12 : max speed is 25% of base speed

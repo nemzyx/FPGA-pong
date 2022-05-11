@@ -1,0 +1,37 @@
+[
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~VendingMachine|DecimalSeperator",
+    "duplicate":"~VendingMachine|VendingMachine/seperator1:DecimalSeperator",
+    "index":0.45454545454545453
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~VendingMachine|DecimalSeperator_1",
+    "duplicate":"~VendingMachine|VendingMachine/seperator2:DecimalSeperator",
+    "index":0.5454545454545454
+  },
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"."
+  },
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~VendingMachine|VendingMachine>io_an",
+    "sources":[
+      "~VendingMachine|VendingMachine>io_pongMode"
+    ]
+  },
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~VendingMachine|VendingMachine>io_seg",
+    "sources":[
+      "~VendingMachine|VendingMachine>io_pongMode",
+      "~VendingMachine|VendingMachine>io_price"
+    ]
+  }
+]

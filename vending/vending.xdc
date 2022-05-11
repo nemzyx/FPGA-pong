@@ -23,7 +23,7 @@ set_property PACKAGE_PIN W15 [get_ports {io_price[4]}]
 #set_property PACKAGE_PIN W2  [get_ports {io_sw[12]}]
 #set_property PACKAGE_PIN U1  [get_ports {io_sw[13]}]
 #set_property PACKAGE_PIN T1  [get_ports {io_sw[14]}]
-set_property PACKAGE_PIN R2  [get_ports {io_pongMode[15]}]
+set_property PACKAGE_PIN R2  [get_ports {io_pongMode}]
 
 ## LEDs
 set_property PACKAGE_PIN U16 [get_ports {io_alarm}]
@@ -48,9 +48,9 @@ set_property PACKAGE_PIN L1  [get_ports {io_releaseCan}]
 #set_property PACKAGE_PIN T17 [get_ports btnR]
 set_property PACKAGE_PIN T17 [get_ports reset]
 # btnU:
-set_property PACKAGE_PIN T18 [get_ports {io_p1}]
+set_property PACKAGE_PIN T18 [get_ports {io_p2}]
 # btnD:
-set_property PACKAGE_PIN U17 [get_ports {io_p2}]
+set_property PACKAGE_PIN U17 [get_ports {io_p1}]
 
 
 ## Pmod in lower row
