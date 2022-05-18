@@ -16,9 +16,17 @@ class FsmSpec extends AnyFlatSpec with ChiselScalatestTester {
       dut.io.alarm.poke(false.B)
       dut.io.subPrice.poke(false.B)
       dut.io.releaseCan.poke(false.B)
+      dut.clock.step(1)
 
       // Testing each state
 
+      // Testing the ready state
+      dut.io.add2.poke(false.B)
+      dut.io.add5.poke(false.B)
+      dut.io.alarm.poke(false.B)
+      dut.io.subPrice.poke(false.B)
+      dut.io.releaseCan.poke(false.B)
+      
       // Testing subPrice
       dut.io.buy.poke(true.B)
       dut.io.buyCheck.poke(true.B)
@@ -39,12 +47,6 @@ class FsmSpec extends AnyFlatSpec with ChiselScalatestTester {
       dut.io.subPrice.poke(false.B)
       dut.io.releaseCan.poke(false.B)
 
-      // Testing the ready state
-      dut.io.add2.poke(false.B)
-      dut.io.add5.poke(false.B)
-      dut.io.alarm.poke(false.B)
-      dut.io.subPrice.poke(false.B)
-      dut.io.releaseCan.poke(false.B)
 
       // Testing add2
       dut.io.coin2.poke(true.B)
